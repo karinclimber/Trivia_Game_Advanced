@@ -47,7 +47,7 @@ $(document).ready(function() {
     
     function timeoutLoss() {
         unansweredTally++;
-        gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>You ran out of time!  The correct answer was: " + correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='/Users/karinhermann/Desktop/code/CodingBootcamp/2.2External CSS Styles/Trivia_Game_Advanced/assets/images/x.gif'>";
+        gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>You ran out of time!  The correct answer was: " + correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='/assets/images/x.gif'>";
         $("#mainArea").html(gameHTML);
         setTimeout(wait, 3000);  //  change to 4000 or other amount
     }
@@ -62,7 +62,7 @@ $(document).ready(function() {
     
     function generateLoss() {
         incorrectTally++;
-        gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Wrong! The correct answer is: "+ correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='/Users/karinhermann/Desktop/code/CodingBootcamp/2.2External CSS Styles/Trivia_Game_Advanced/assets/images/x.gif'>";
+        gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Wrong! The correct answer is: "+ correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='/assets/images/x.gif'>";
         $("#mainArea").html(gameHTML);
         setTimeout(wait, 3000); //  change to 4000 or other amount
     }
@@ -137,14 +137,14 @@ $(document).ready(function() {
         ["Miller High Life","Bud Light","Budweiser","Busch"], ];
 
     var imageArray = new Array(); 
-    imageArray[0] = "<img class='center-block' src='/Users/karinhermann/Desktop/code/CodingBootcamp/2.2External CSS Styles/Trivia_Game_Advanced/assets/images/budweiser.jpg'>";
-    imageArray[1] = "<img class='center-block' src='/Users/karinhermann/Desktop/code/CodingBootcamp/2.2External CSS Styles/Trivia_Game_Advanced/assets/images/heineken.jpeg'>"; 
-    imageArray[2] = "<img class='center-block' src='/Users/karinhermann/Desktop/code/CodingBootcamp/2.2External CSS Styles/Trivia_Game_Advanced/assets/images/milwaukee.jpg'>"; 
-    imageArray[3] = "<img class='center-block' src='/Users/karinhermann/Desktop/code/CodingBootcamp/2.2External CSS Styles/Trivia_Game_Advanced/assets/images/heineken.jpeg'>";  
-    imageArray[4] = "<img class='center-block' src='/Users/karinhermann/Desktop/code/CodingBootcamp/2.2External CSS Styles/Trivia_Game_Advanced/assets/images/pbr.gif'>"; 
-    imageArray[5] = "<img class='center-block' src='/Users/karinhermann/Desktop/code/CodingBootcamp/2.2External CSS Styles/Trivia_Game_Advanced/assets/images/carlsburg.jpg'>"; 
-    imageArray[6] = "<img class='center-block' src='/Users/karinhermann/Desktop/code/CodingBootcamp/2.2External CSS Styles/Trivia_Game_Advanced/assets/images/trappist.jpeg'>"; 
-    imageArray[7] = "<img class='center-block' src='/Users/karinhermann/Desktop/code/CodingBootcamp/2.2External CSS Styles/Trivia_Game_Advanced/assets/images/miller.jpg'>"; 
+    imageArray[0] = "<img class='center-block' src='/assets/images/budweiser.jpg'>";
+    imageArray[1] = "<img class='center-block' src='/assets/images/heineken.jpeg'>"; 
+    imageArray[2] = "<img class='center-block' src='/assets/images/milwaukee.jpg'>"; 
+    imageArray[3] = "<img class='center-block' src='/assets/images/heineken.jpeg'>";  
+    imageArray[4] = "<img class='center-block' src='/assets/images/pbr.gif'>"; 
+    imageArray[5] = "<img class='center-block' src='/assets/images/carlsburg.jpg'>"; 
+    imageArray[6] = "<img class='center-block' src='/assets/images/trappist.jpeg'>"; 
+    imageArray[7] = "<img class='center-block' src='/assets/images/miller.jpg'>"; 
 
     var correctAnswers = 
     [ "C. Budweiser", 
