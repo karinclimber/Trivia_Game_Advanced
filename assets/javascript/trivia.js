@@ -13,7 +13,7 @@ $(document).ready(function() {
     $("#mainArea").on("click", ".start-button", function(event){
         event.preventDefault();  // added line to test issue on GitHub Viewer
         clickSound.play();
-            $('.jumbotron').hide();
+        $('.jumbotron').hide();
             
         generateQuestions();
     
