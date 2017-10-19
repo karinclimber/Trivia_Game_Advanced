@@ -25,17 +25,16 @@ $(document).ready(function() {
         //answeredQuestion = true;
         clickSound.play();
         selectedAnswer = $(this).text();
-        if(selectedAnswer === correctAnswers[questionCounter]) {
+        //ternary operator, if/else replacement
+        selectedAnswer === correctAnswers[questionCounter] ? (
             //alert("correct");
-    
-            clearInterval(theClock);
-            generateWin();
-        }
-        else {
-            //alert("wrong answer!");
-            clearInterval(theClock);
-            generateLoss();
-        }
+            clearInterval(theClock),
+            generateWin()) :
+            //else
+            (//alert("wrong answer!");
+            clearInterval(theClock),
+            generateLoss()
+        )
     }); // Close .answer click
     
     $("body").on("click", ".reset-button", function(event){
@@ -56,33 +55,33 @@ $(document).ready(function() {
         correctTally++;
         gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Correct! The answer is: " + correctAnswers[questionCounter] + "</p>" + imageArray[questionCounter];
         $("#mainArea").html(gameHTML);
-        // $("#mainArea").append(imageArray[questionCounter])
-        setTimeout(wait, 3000);  //  change to 4000 or other amount
+        
+        setTimeout(wait, 3000);  //end generatewin
     }
     
     function generateLoss() {
         incorrectTally++;
         gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Wrong! The correct answer is: "+ correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='/assets/images/x.gif'>";
         $("#mainArea").html(gameHTML);
-        setTimeout(wait, 3000); //  change to 4000 or other amount
+        setTimeout(wait, 3000); 
     }
-    
+    //end generate loss
+
     function generateQuestions() {
         gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>30</span></p><p class='text-center'>" + questionArray[questionCounter] + "</p><p class='first-answer answer'>A. " + answerArray[questionCounter][0] + "</p><p class='answer'>B. "+answerArray[questionCounter][1]+"</p><p class='answer'>C. "+answerArray[questionCounter][2]+"</p><p class='answer'>D. "+answerArray[questionCounter][3]+"</p>";
         $("#mainArea").html(gameHTML);
-    }
+    }; //end generate question
     
     function wait() {
-        if (questionCounter < 7) {
-        questionCounter++;
-        generateQuestions();
-        counter = 30;
-        timerWrapper();
-        }
-        else {
-            finalScreen();
-        }
-    }
+        //ternary operator replacing if/else for generate more questions
+    questionCounter < 7 ? 
+        (questionCounter++,
+        generateQuestions(),
+        counter = 30,
+        timerWrapper() ):
+        
+       (finalScreen())
+    }; //end function
     
     function timerWrapper() {
         theClock = setInterval(thirtySeconds, 1000);
