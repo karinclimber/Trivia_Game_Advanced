@@ -22,7 +22,7 @@ $(document).ready(function() {
     }); // Closes start-button click
     
     $("body").on("click", ".answer", function(event){
-        //answeredQuestion = true;
+        
         clickSound.play();
         selectedAnswer = $(this).text();
         //ternary operator, if/else replacement
